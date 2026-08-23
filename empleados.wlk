@@ -1,62 +1,70 @@
-//Escribir aqui los objetosobject gimenez {
-	method pagarSueldo(empleado){
-		fondo = fondo - empleado.sueldo()
-	empleado.cobrarSueldo()
+object galvan{
+	var sueldo = 15000
+	var saldo = 0
+
+	method getSueldo(){
+		return sueldo
+	}
+
+	method cambiarSueldo(nuevoSueldo){
+		sueldo = nuevoSueldo
+	}
+
+	method cobrarSueldo(){
+		saldo += sueldo
+	}
+
+	method gastar(cantidad){
+		saldo -= cantidad
+	}
+
+	method deuda(){
+		return 	if saldo < 0 then -saldo else 0  		
+	}
+
+	method dinero(){
+		return if saldo >= 0 then saldo else 0		
 	}
 
 }
-object galvan{
 
-	var sueldo = 15000
-    var deuda = 0
-    var dinero = 0 
+object baigorria{
+	var totalCobrado = 0
+	var cantidadDeEmpanadasVendidas = 0
 
-	method sueldo(){
-		return sueldo
+	method cantidadDeEmpanadasVendidas(){
+		return cantidadDeEmpanadasVendidas
 	}
---no podria poner self.sueldo?? como el this en java?
-	method sueldo(_sueldo){
-		sueldo = _sueldo
+
+	method venderEmpanadas(cantidad){
+		cantidadDeEmpanadasVendidas += cantidad
+	}
+
+	method getSueldo(){
+		return self.cantidadDeEmpanadasVendidas() * 15
+	}
+
+	method cobrarSueldo(){
+		totalCobrado =+ self.getSueldo()
+		cantidadDeEmpanadasVendidas = 0
 	}
 	
-	method cobrarSueldo(
-		totalCobrado += self.sueldo()
-	)
-
-	method totalCobrado{
+	method totalCobrado(){
 		return totalCobrado
 	}
 
-    method gastar(cuanto){
-        dinero = self.dinero() - cuanto
-    }
-
-    method deuda(){
-       return if dinero<0 then dinero else 0
-    }
-
-    method dinero(){
-        return dinero
-    }
 }
 
-object balgarria{
-var empanadasVendidas = 0
-
-	method sueldo(){
-		return self.empanadasVendidas() * self.precioEmpanadas()
+object gimenez{
+	var fondo = 300000
+	
+	method pagarSueldo(empleado){
+		fondo -= empleado.getSueldo()
+		empleado.cobrarSueldo()
 	}
 
-	method empanadasVendidas(){
-		return empanadasVendidas
+	method getFondo(){
+		return fondo
 	}
+} 
 
-	method vender(empanadas){
-		empanadasVendidas = empanadasVendidas + empanadas
-	}
-
-	method precioEmpanadas(){
-		return 15
-	}
-method cobrarSueldo(){}
-}
