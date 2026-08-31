@@ -16,3 +16,6 @@ test "punto1: Planteo inicial" {
 
 agreagar dos test con respecto a esto
 
+puedePagarleA(empleado)
+assert.isTha(gimenez.getFondo() >= empleado.getSueldo())
+
