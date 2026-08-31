@@ -16,6 +16,12 @@ test "punto1: Planteo inicial" {
 
 agreagar dos test con respecto a esto
 
-puedePagarleA(empleado)
+method validarVolar(distancia) { //método para validar: es una orden
+       // la condición es por la negación de la precondición
+       if (not self.puedeVolar(distancia)) { 
+           self.error("No se puede volar " + distancia ) //Acá se lanza el error
+       }
+   }
+
 assert.isTha(gimenez.getFondo() >= empleado.getSueldo())
 
