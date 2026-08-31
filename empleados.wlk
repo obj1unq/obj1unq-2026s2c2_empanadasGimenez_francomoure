@@ -64,4 +64,12 @@ object gimenez{
     method getFondo(){
         return fondo
     }
+
+
+    method validarpagarSueldo(empleado) { //método para validar: es una orden
+       // la condición es por la negación de la precondición
+       if (not self.getFondo() >= empleado.getSueldo()) { 
+           self.error("No puede pagar el sueldo porque el fondo es insuficiente")
+       }
+   }
 }
