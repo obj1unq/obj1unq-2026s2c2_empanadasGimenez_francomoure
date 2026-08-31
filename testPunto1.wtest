@@ -14,14 +14,21 @@ test "punto1: Planteo inicial" {
   //si gimanez no tiene dinero para pagar un sueldo, debe lanzar error
 }
 
+/*
 agreagar dos test con respecto a esto
 
-method validarVolar(distancia) { //método para validar: es una orden
+method pagarSueldo(empleado){
+        fondo -= empleado.getSueldo()
+        empleado.cobrarSueldo()
+    }
+
+*/
+
+method validarpagarSueldo(empleado) { //método para validar: es una orden
        // la condición es por la negación de la precondición
-       if (not self.puedeVolar(distancia)) { 
-           self.error("No se puede volar " + distancia ) //Acá se lanza el error
+       if (not self.getFondo() >= empleado.getSueldo) { 
+           self.error("No puede pagar el sueldo porque el fondo es insuficiente")
        }
    }
 
-assert.isTha(gimenez.getFondo() >= empleado.getSueldo())
 
