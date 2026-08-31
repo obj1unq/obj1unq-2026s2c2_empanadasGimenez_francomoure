@@ -36,7 +36,7 @@ describe "hacer que pague sueldos"{
 test "hacer que pague sueldos"{
 
     /*
-    debo hacer arrange
+    debo hacer arrange,act y assert
     */
 
     gimenez.pagarSueldo(baigorria)
