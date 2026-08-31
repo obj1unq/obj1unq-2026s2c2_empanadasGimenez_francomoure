@@ -35,8 +35,9 @@ method pagarSueldo(empleado){
 describe "hacer que pague sueldos"{
 test "hacer que pague sueldos"{
 
+    arrange{galvan.sueldo(50000)}
     /*
-    debo hacer arrange,act y assert
+    tengo que hacer arrange,act y assert
     */
 
     gimenez.pagarSueldo(galvan)
@@ -44,3 +45,5 @@ test "hacer que pague sueldos"{
 }
 }
 //probar validacion sobre cada uno de los empleados, un test por empleado
+//quiero validar si le puedo pagar el sueldo a galvan
+//quiero validar si le puedo pagar el sueldo a baigorra
