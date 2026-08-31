@@ -39,9 +39,8 @@ test "hacer que pague sueldos"{
     debo hacer arrange,act y assert
     */
 
-    gimenez.pagarSueldo(baigorria)
     gimenez.pagarSueldo(galvan)
     assert.equals(300000, gimenez.fondo())
 }
 }
-
+//probar validacion sobre cada uno de los empleados, un test por empleado

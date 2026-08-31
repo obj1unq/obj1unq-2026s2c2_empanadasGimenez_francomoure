@@ -78,7 +78,7 @@ object gimenez{
 
     method validarpagarSueldo(empleado) { //método para validar: es una orden
        // la condición es por la negación de la precondición
-       if (not self.fondo() >= empleado.sueldo()) { 
+       if (self.fondo() < empleado.sueldo()) { 
            self.error("No puede pagar el sueldo porque el fondo es insuficiente")
        }
    }
