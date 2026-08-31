@@ -19,11 +19,20 @@ object galvan{
     }
 
     method deuda(){
-        return if saldo < 0 then -saldo else 0
+         if (saldo < 0){
+         return -saldo          
+        }else{
+            return 0
+        }
+            
     }
 
     method dinero(){
-        return if saldo >= 0 then saldo else 0
+         if (saldo >= 0){
+         return saldo         
+        }else{
+            return 0
+        }
     }
 }
 
