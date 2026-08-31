@@ -57,6 +57,7 @@ object gimenez{
     var fondo = 300000
 
     method pagarSueldo(empleado){
+        self.validarpagarSueldo(empleado)
         fondo -= empleado.getSueldo()
         empleado.cobrarSueldo()
     }
