@@ -2,12 +2,12 @@ object galvan{
     var sueldo = 15000
     var saldo = 0
 
-    method getSueldo(){
+    method sueldo(){
         return sueldo
     }
 
-    method cambiarSueldo(nuevoSueldo){
-        sueldo = nuevoSueldo
+    method sueldo(_sueldo){
+        sueldo = _sueldo
     }
 
     method cobrarSueldo(){
@@ -39,12 +39,12 @@ object baigorria{
         cantidadDeEmpanadasVendidas += cantidad
     }
 
-    method getSueldo(){
+    method sueldo(){
         return self.cantidadDeEmpanadasVendidas() * 15
     }
 
     method cobrarSueldo(){
-        totalCobrado += self.getSueldo()
+        totalCobrado += self.sueldo()
         cantidadDeEmpanadasVendidas = 0
     }
 
@@ -58,18 +58,18 @@ object gimenez{
 
     method pagarSueldo(empleado){
         self.validarpagarSueldo(empleado)
-        fondo -= empleado.getSueldo()
+        fondo -= empleado.sueldo()
         empleado.cobrarSueldo()
     }
 
-    method getFondo(){
+    method fondo(){
         return fondo
     }
 
 
     method validarpagarSueldo(empleado) { //método para validar: es una orden
        // la condición es por la negación de la precondición
-       if (not self.getFondo() >= empleado.getSueldo()) { 
+       if (not self.fondo() >= empleado.sueldo()) { 
            self.error("No puede pagar el sueldo porque el fondo es insuficiente")
        }
    }
