@@ -1,5 +1,5 @@
 import empleados.*
-
+/*
 test "punto1: Planteo inicial" {
 
   baigorria.vender(500)
@@ -22,13 +22,26 @@ method pagarSueldo(empleado){
         empleado.cobrarSueldo()
     }
 
+
+ test "pepita vuela lo que se le antoja" {
+   pepita.dado(dadoCargado) // Le configuro el stub
+   pepita.volarLoQueSeTeAntoje() //Se que voló 3
+   assert.equals(87, pepita.energia()) //verifico el efecto sabiendo 
+                                     // que se le antojó 3
+ }
+
 */
 
-method validarpagarSueldo(empleado) { //método para validar: es una orden
-       // la condición es por la negación de la precondición
-       if (not self.getFondo() >= empleado.getSueldo) { 
-           self.error("No puede pagar el sueldo porque el fondo es insuficiente")
-       }
-   }
+describe "hacer que pague sueldos"{
+test "hacer que pague sueldos"{
 
+    /*
+    debo hacer arrange
+    */
+
+    gimenez.pagarSueldo(baigorria)
+    gimenez.pagarSueldo(galvan)
+    assert.equals(300000, gimenez.fondo())
+}
+}
 
