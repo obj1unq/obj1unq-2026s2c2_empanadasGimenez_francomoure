@@ -2,9 +2,9 @@ import empleados.*
 
 test "pagarSueldo a galvan"{
 
- galvan.sueldo()
+  galvan.saldo(1)
   gimenez.pagarSueldo(galvan)
-  
+  assert.equals(15001, galvan.sueldo())
 }
 
 //probar validacion sobre cada uno de los empleados, un test por empleado
